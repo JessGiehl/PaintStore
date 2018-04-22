@@ -1,3 +1,6 @@
+$fontsize: 1.6rem/1.25;
+$fontfamily: "Program OT", Arial, sans-serif;
+
 %center-element {
   margin-left: auto;
   margin-right: auto;
@@ -9,10 +12,69 @@
 }
 
 @mixin mq($size) {
-  @if $size == medium {
-    @media (min-width: 500px) { @content; }
-  }
-  @else if $size == large {
+  @if $size == large {
     @media (min-width: 800px) { @content; }
   }
+}
+
+body{
+  font-family: $fontfamily;
+  font-size: $fontsize;
+}
+
+h2{
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+section {
+  @extend %center-element;
+  width: 400px;
+}
+
+#product {
+  background: white;
+  p {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+#shipping {
+  background: #e8e8e8;
+  .shippinginfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    label {
+      font-size: 1rem;
+    }
+  }
+}
+
+#summary {
+  background: #d4d4d4;
+}
+
+img {
+  @extend %center-element;
+  width: 90%;
+}
+
+fieldset {
+  margin: 0;
+  border: 0px;
+  padding: 0;
+}
+
+button {
+  width: 98%;
+}
+
+label, input {
+  display: block;
+}
+
+.error {
+  color: red;
 }
