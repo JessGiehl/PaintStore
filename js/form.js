@@ -3,6 +3,21 @@ const submit = document.querySelector('button');
 var formInputs = document.getElementsByTagName('input');
 var errorsPresent = false;
 
+var name = '';
+var email = '';
+var address = '';
+var address2 = '';
+var city = '';
+var state = '';
+var zip = '';
+var country = '';
+var shippingInfo =
+`${name}
+${email}
+${address} ${address2}
+${city} ${state} ${zip}
+${country}`;
+
 // Create a validity class
 
 class CheckValidity {
@@ -67,7 +82,9 @@ submit.addEventListener("click", (event) => {
     }
   }
   if (!errorsPresent){
-
+    document.querySelectorAll('.error').forEach(function(a){
+      a.remove()
+    })
   }
 
 })

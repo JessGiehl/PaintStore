@@ -16,14 +16,14 @@
         <img src="paint.jpg" alt="a bucket of paint">
         <p class="price">$20.00</p>
         <h3>Selct a size</h3>
-        <input type="radio" id="small" name="size">
+        <input type="radio" id="small" name="size" checked='checked'>
         <label for="small">S</label>
         <input type="radio" id="medium" name="size">
         <label for="medium">M</label>
         <input type="radio" id="large" name="size">
         <label for="large">L</label>
         <h3>Select a color</h3>
-        <input type="radio" id="red" name="color">
+        <input type="radio" id="red" name="color" checked='checked'>
         <label for="red">Red</label>
         <input type="radio" id="yellow" name="color">
         <label for="yellow">Yellow</label>
@@ -36,18 +36,18 @@
         <h2>Shipping Details</h2>
         <fieldset class="shippinginfo">
           <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" required>
+          <input type="text" name="name" id="name" required minlength="3" maxlength="50">
           <label for="Email">Email</label>
           <input type="text" name="email" id="email" required>
           <fieldset>
             <label for="address">Address</label>
-            <input type="text" name="address" id="address" required>
+            <input type="text" name="address" id="address" required minlength="5" maxlength="50">
             <label for="address2">Address 2</label>
-            <input type="text" name="address2" id="address2">
+            <input type="text" name="address2" id="address2" maxlength="50">
             <label for="City">City</label>
-            <input type="text" name="city" id="city" required>
+            <input type="text" name="city" id="city" required minlength="2" maxlength="50">
             <label for="State">State</label>
-            <input type="text" name="state" id="state" required>
+            <input type="text" name="state" id="state" required minlength="2" maxlength="13">
             <label for="zip">Zip</label>
             <input type="text" name="zip" id="zip" required>
             <label for="country">Country</label>
@@ -307,6 +307,8 @@
       </section>
       <section id="summary">
         <h2>Order Summary</h2>
+        <h3>Shipping Address</h3>
+        <p class="shippinginfo"></p>
         <button>Complete Order</button>
       </section>
     </form>

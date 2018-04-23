@@ -46,4 +46,6 @@ label, input {
   display: block; }
 
 .error {
-  color: red; }
+  color: red;
+  font-size: .8rem;
+  margin-top: 0;}
