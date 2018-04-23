@@ -6,6 +6,9 @@ body {
   font-family: "Program OT", Arial, sans-serif;
   font-size: 1.28rem; }
 
+h1 {
+  font-size: 2rem; }
+
 h2 {
   padding: 1rem;
   font-size: 1.6rem; }
@@ -46,6 +49,4 @@ label, input {
   display: block; }
 
 .error {
-  color: red;
-  font-size: .8rem;
-  margin-top: 0;}
+  color: red; }
