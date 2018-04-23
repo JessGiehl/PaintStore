@@ -74,7 +74,7 @@ class CheckValidity {
 
 smallRadio.addEventListener("click", function(){
   if (smallRadio.checked){
-    size = small;
+    size = 'Small';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
@@ -82,15 +82,16 @@ smallRadio.addEventListener("click", function(){
 
 mediumRadio.addEventListener("click", function(){
   if (mediumRadio.checked){
-    size = medium;
+    size = 'Medium';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
+  console.log(size);
 })
 
 largeRadio.addEventListener("click", function(){
   if (largeRadio.checked){
-    size = large;
+    size = 'Large';
   }
   var productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
@@ -98,28 +99,29 @@ largeRadio.addEventListener("click", function(){
 
 redRadio.addEventListener("click", function(){
   if (redRadio.checked){
-    color = red;
+    color = 'Red';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
 })
 yellowRadio.addEventListener("click", function(){
   if (yellowRadio.checked){
-    color = yellow;
+    color = 'Yellow';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
+  console.log(color);
 })
 greenRadio.addEventListener("click", function(){
   if (greenRadio.checked){
-    color = green;
+    color = 'Green';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
 })
 blueRadio.addEventListener("click", function(){
   if (blueRadio.checked){
-    color = blue;
+    color = 'Blue';
   }
   productInfo = `${size} ${color} Paint Can`;
   outputProduct.innerHTML = productInfo;
