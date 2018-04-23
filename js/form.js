@@ -10,13 +10,11 @@ var address2 = '';
 var city = '';
 var state = '';
 var zip = '';
-var country = '';
-var shippingInfo =
-`${name}
-${email}
-${address} ${address2}
-${city} ${state} ${zip}
-${country}`;
+var countrySelector = document.getElementById('country');
+var country = countrySelector.options[countrySelector.selectedIndex].innerHTML;
+var shippingInfo = '';
+
+var outputTag = document.getElementById('shippinginfo');
 
 // Create a validity class
 
@@ -59,7 +57,76 @@ class CheckValidity {
 
 }
 
-
+document.querySelector('#name').addEventListener("blur", function(){
+  name = document.querySelector('#name').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#email').addEventListener("blur", function(){
+  email = document.getElementById('email').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#address').addEventListener("blur", function(){
+  address = document.getElementById('address').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#address2').addEventListener("blur", function(){
+  address2 = document.getElementById('address2').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#city').addEventListener("blur", function(){
+  city = document.getElementById('city').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#state').addEventListener("blur", function(){
+  state = document.getElementById('state').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
+document.querySelector('#zip').addEventListener("blur", function(){
+  zip = document.getElementById('zip').value;
+  var shippingInfo =
+  `${name}
+  ${email}
+  ${address} ${address2}
+  ${city} ${state} ${zip}
+  ${country}`;
+  outputTag.innerHTML = shippingInfo;
+})
 
 // Set up submit listener
 submit.addEventListener("click", (event) => {
@@ -82,9 +149,18 @@ submit.addEventListener("click", (event) => {
     }
   }
   if (!errorsPresent){
-    document.querySelectorAll('.error').forEach(function(a){
-      a.remove()
-    })
-  }
-
+    document.querySelector('form').remove();
+    document.querySelector('main').innerHTML =
+      `<section>
+      <h1>Order Completed</h1>
+      <h2>Order Summary</h2>
+      <h3>Shipping Address</h3>
+      <p>${name}
+      ${email}
+      ${address} ${address2}
+      ${city} ${state} ${zip}
+      ${country}</p>
+      <img src="circle-check.svg" alt="a blue checkmark">
+      </section>`;
+    }
 })
